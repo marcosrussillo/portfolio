@@ -1,0 +1,78 @@
+/* Contato.css */
+.contato {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: linear-gradient(180deg,
+        rgba(30, 41, 59, 0.9) 0%,
+        rgba(15, 23, 42, 0.95) 100%);
+    min-height: 60vh; /* Altura mínima */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+
+.contatos-titulo {
+    font-size: 2.5rem;
+    color: var(--primaria);
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.contatos-titulo::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+}
+
+.redes-sociais {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.icone-contato {
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--vidro);
+}
+
+.icone-contato:hover {
+    transform: scale(1.15);
+    background: rgba(79, 70, 229, 0.1);
+    border-color: var(--primaria);
+    box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+}
+
+@media (max-width: 768px) {
+    .contato {
+        padding: 4rem 1rem;
+        min-height: 50vh;
+    }
+    
+    .contatos-titulo {
+        font-size: 2rem;
+    }
+    
+    .redes-sociais {
+        gap: 2rem;
+    }
+    
+    .icone-contato {
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+    }
+}

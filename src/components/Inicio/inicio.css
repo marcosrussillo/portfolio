@@ -1,0 +1,437 @@
+.inicio {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cabecalho-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.foto-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto-container::before {
+    content: '';
+    position: absolute;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    border: 4px solid transparent;
+    border-top: 4px solid var(--primaria);
+    border-right: 4px solid var(--primaria);
+    animation: girar 3s linear infinite;
+    z-index: 1;
+}
+
+@keyframes girar {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.foto-perfil {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--vidro);
+    box-shadow: 0 0 30px rgba(79, 70, 229, 0.3);
+    z-index: 2;
+    position: relative;
+}
+
+.texto-cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* IMPORTANTE: centraliza */
+    text-align: center;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto; /* Centraliza horizontalmente */
+}
+
+.texto-cabecalho h1 {
+    font-size: 2.34rem;
+    color: var(--primaria);
+    font-weight: bold;
+    margin: 0;
+}
+
+.cabecalho-sub-titulo {
+    font-size: 1.5rem;
+    color: var(--claro);
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .texto-cabecalho h1 {
+        font-size: 2.2rem;
+    }
+    
+    .cabecalho-sub-titulo {
+        font-size: 1.2rem;
+    }
+    
+    .foto-container {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .foto-container::before {
+        width: 170px;
+        height: 170px;
+    }
+    
+    .foto-perfil {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+
+/* Container dos botões */
+.botoes-acao {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* Botão de download do CV */
+.btn-download-cv {
+    background: linear-gradient(135deg, 
+        var(--primaria) 0%, 
+        var(--secundaria) 100%);
+    color: white;
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 50px;
+    font-size: 0rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 15px rgba(79, 70, 229, 0.3),
+        0 0 20px rgba(79, 70, 229, 0.1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+}
+
+/* Efeito hover */
+.btn-download-cv:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 8px 25px rgba(79, 70, 229, 0.4),
+        0 0 30px rgba(79, 70, 229, 0.2);
+}
+
+/* Efeito de brilho no hover */
+.btn-download-cv::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.2), 
+        transparent);
+    transition: left 0.5s ease;
+    z-index: -1;
+}
+
+.btn-download-cv:hover::before {
+    left: 100%;
+}
+
+/* Ícone */
+.icone-download {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-download-cv:hover .icone-download {
+    transform: translateY(2px);
+}
+
+.btn-download-outline {
+    background: transparent;
+    color: var(--primaria);
+    border: 2px solid var(--primaria);
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.btn-download-outline:hover {
+    background: var(--primaria);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.3);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .botoes-acao {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .btn-download-cv,
+    .btn-download-outline {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+
+    
+}
+.btn-download-cv {
+    background: linear-gradient(135deg, 
+        var(--primaria) 0%, 
+        var(--secundaria) 100%);
+    color: white;
+    border: none;
+    padding: 0.9rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 20px rgba(79, 70, 229, 0.3),
+        0 0 30px rgba(79, 70, 229, 0.15);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-download-cv::before {
+    content: '↓ ';
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+.btn-download-cv::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 255, 255, 0.25), 
+        transparent);
+    transition: left 0.7s ease;
+    z-index: -1;
+}
+
+.btn-download-cv:hover::after {
+    left: 100%;
+}
+
+.btn-download-cv:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        0 8px 30px rgba(79, 70, 229, 0.5),
+        0 0 40px rgba(79, 70, 229, 0.25);
+}
+
+/* Navbar.css - HAMBURGER APENAS NO MOBILE */
+.navegacao {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 0;
+    border-bottom: 1px solid rgba(79, 70, 229, 0.2);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+/* Logo */
+.nav-logo a {
+    color: var(--primaria);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Menu desktop - SEMPRE visível em telas grandes */
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-link {
+    text-decoration: none;
+    color: var(--claro);
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.menu-link:hover {
+    color: var(--primaria);
+}
+
+.menu-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primaria), var(--secundaria));
+    transition: width 0.3s ease;
+}
+
+.menu-link:hover::after {
+    width: 100%;
+}
+
+/* ===== HAMBURGER ===== */
+/* Botão hamburger - ESCONDIDO no desktop */
+.hamburger-btn {
+    display: none; /* Escondido por padrão */
+    background: none;
+    border: none;
+    color: var(--claro);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+/* MOSTRAR hamburger APENAS em mobile (max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .hamburger-btn {
+        display: block; /* Aparece apenas no mobile */
+    }
+    
+    /* Menu - ESCONDIDO por padrão no mobile */
+    .menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem 0;
+        gap: 0;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        border-top: 1px solid var(--vidro);
+        z-index: 1000;
+    }
+    
+    /* Quando menu está aberto no mobile */
+    .menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .menu li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .menu-link {
+        display: block;
+        padding: 1.2rem;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .menu-link:last-child {
+        border-bottom: none;
+    }
+    
+    .menu-link:hover {
+        background: rgba(79, 70, 229, 0.1);
+    }
+    
+    /* Ajuste do container no mobile */
+    .nav-container {
+        padding: 0 1.5rem;
+    }
+}
+
+/* Para telas muito pequenas */
+@media screen and (max-width: 480px) {
+    .nav-container {
+        padding: 0 1rem;
+    }
+    
+    .nav-logo a {
+        font-size: 1.3rem;
+    }
+    
+    .menu-link {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
