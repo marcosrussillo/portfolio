@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import "./Navbar.css";
-// Se não tem react-icons, use texto ou emoji
-import { FaBars, FaTimes } from 'react-icons/fa'; // Opcional
+import "./navbar.css";
+
+import { FaBars, FaTimes } from 'react-icons/fa'; 
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
