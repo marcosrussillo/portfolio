@@ -9,7 +9,7 @@ const Inicio = () => {
     const cvUrl = "../../src/conteudo/Curriculo_Marcos_Russillo.pdf"; // Ajuste o caminho
     const link = document.createElement('a');
     link.href = cvUrl;
-    link.download = "Curriculo_Marcos_Russillo.pdf"; // Nome do arquivo
+    link.download = "../../src/conteudo/Curriculo_Marcos_Russillo.pdf"; // Nome do arquivo
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
